@@ -1,0 +1,87 @@
+:root {
+    --Nunito: 'Nunito', sans-serif;
+    --Rubik: 'Rubik', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+footer{
+    margin-top: 30px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+body {
+    font-family: var(--Rubik);
+    position: relative;
+    height: 100%;
+    font-family:
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.countainer {
+    max-width: 1300px;
+}
+
+.juz {
+    width: 320px;
+}
+.j-logo{
+    width: 150px;
+    margin-left: 80px;
+    margin-top: -60px;
+    transform: rotate(4.92deg);
+}
+.j-logo1{
+    width: 150px;
+    margin-left: 1250px;
+    margin-top: -170px;
+    position: relative;
+    top: -20px;
+    transform: rotate(5deg);
+}
+.full{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 100px;
+}
+.footer-text{
+    color: rgba(131, 125, 125, 1);
+    font-size: 15px;
+    margin-top: 50px;
+}
+.footer-text p{
+    margin-bottom: 10px;
+}
+.hr1{
+    width: 1000px;
+}
+.bottom-text{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;    
+    color: rgba(131, 125, 125, 1);
+}
+.logo-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.sot-logo{
+    width: 30px;
+}

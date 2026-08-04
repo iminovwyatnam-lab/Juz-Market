@@ -1,0 +1,79 @@
+:root {
+    --Nunito: 'Nunito', sans-serif;
+    --Rubik: 'Rubik', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+body {
+    font-family: var(--Rubik);
+    position: relative;
+    height: 100%;
+    font-family:
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.countainer {
+    max-width: 1300px;
+}
+
+.search {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+.inp {
+    border-radius: 7px;
+    outline: none;
+    padding-left: 10px;
+    background-color: white;
+    border: none;
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s, opacity 0.3s;
+}
+
+.search:hover,
+.search:focus-within {
+    width: 300px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.search:hover .inp,
+.search:focus-within .inp {
+    width: 250px;
+    padding: 8px;
+    padding-right: 50px;
+    opacity: 1;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+.fa-solid {
+    margin-left: 10px;
+}

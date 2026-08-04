@@ -1,0 +1,159 @@
+:root {
+    --Nunito: 'Nunito', sans-serif;
+    --Rubik: 'Rubik', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    font-family: var(--Rubik);
+    position: relative;
+    height: 100%;
+    font-family:
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.countainer {
+    max-width: 1300px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -30px;
+    gap: 200px;
+}
+
+.juz-market {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.header-flex {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+.obshiy {
+    width: 15px;
+}
+
+.fa-solid {
+    margin-left: 10px;
+}
+
+.inp {
+    border-radius: 7px;
+    outline: none;
+    padding-left: 10px;
+    background-color: white;
+    border: none;
+    width: 0;
+    opacity: 0;
+    transition: width 0.5s, opacity 0.3s;
+}
+
+.search:hover,
+.search:focus-within {
+    width: 300px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.search:hover .inp,
+.search:focus-within .inp {
+    width: 250px;
+    padding: 8px;
+    padding-right: 50px;
+    opacity: 1;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.butt {
+    position: relative;
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    border-radius: 7px;
+    border: none;
+    background-color: white;
+    gap: 5px;
+    text-align: center;
+    font-family: var(--Rubik);
+    font-size: 15px;
+    transition: all 0.4s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.butt:hover {
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.butt1 {
+    position: relative;
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    border-radius: 7px;
+    border: none;
+    background-color: white;
+    gap: 5px;
+    text-align: center;
+    font-family: var(--Rubik);
+    font-size: 17px;
+    padding-right: 18px;
+    transition: all 0.4s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.butt1:hover {
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.header-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #7C6BF5;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}

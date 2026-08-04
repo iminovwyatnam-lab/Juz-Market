@@ -1,0 +1,260 @@
+.karzina-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin: 30px 0 60px;
+    align-items: start;
+}
+
+.karzina-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.karzina-card {
+    background: white;
+    border: 1px solid #EEEEF0;
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.karzina-select {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 8px;
+    font-family: var(--Rubik);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #1F2328;
+    cursor: pointer;
+    width: fit-content;
+}
+.karzina-select input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.karzina-hr {
+    border: none;
+    border-top: 1px solid #EEEEF0;
+    margin: 12px 0;
+}
+
+.karzina-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.karzina-image-wrap {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: #F6F6F8;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.karzina-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.karzina-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #EDEDF0;
+}
+
+.karzina-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.karzina-name {
+    font-family: var(--Rubik);
+    font-size: 13.5px;
+    color: #1F2328;
+    line-height: 1.4;
+}
+.karzina-brand {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.karzina-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 500;
+    position: relative;
+    top: 20px;
+    left: 425px;
+}
+.karzina-meta {
+    font-size: 12px;
+    color: #9CA3AF;
+    margin-left: 1px;
+    margin-top: -10px;
+}
+
+.karzina-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F6F6F8;
+    border-radius: 8px;
+    padding: 6px 10px;
+    flex-shrink: 0;
+}
+.karzina-qty button {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    color: #1F2328;
+}
+.karzina-qty span {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.karzina-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.karzina-price span {
+    font-size: 11px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.karzina-actions {
+    width:70px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
+    margin-left: 680px;
+}
+.karzina-delete,
+.karzina-fav {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #F6F6F8;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.karzina-delete:hover {
+    color: #DC2626;
+}
+.karzina-fav:hover,
+.karzina-fav.is-active {
+    color: #EF4444;
+}
+
+/* ---------- SUMMARY ---------- */
+.karzina-summary {
+    background: white;
+    border: 1px solid #EEEEF0;
+    border-radius: 14px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+.karzina-summary h2 {
+    font-family: var(--Rubik);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.karzina-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13.5px;
+    color: #4B5563;
+    padding: 6px 0;
+}
+.karzina-summary-total {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    border-top: 1px solid #EEEEF0;
+    margin-top: 6px;
+    padding-top: 12px;
+}
+.karzina-checkout {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #7C6BF5;
+    color: white;
+    font-family: var(--Rubik);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.karzina-note {
+    font-size: 11.5px;
+    color: #9CA3AF;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* ---------- EMPTY STATE ---------- */
+.karzina-empty {
+    text-align: center;
+    padding: 100px 0;
+    color: #6B7280;
+}
+.karzina-empty p {
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+.karzina-empty-link {
+    display: inline-block;
+    background: #7C6BF5;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--Rubik);
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    .karzina-layout {
+        grid-template-columns: 1fr;
+    }
+    .karzina-row {
+        flex-wrap: wrap;
+    }
+}
