@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react';
 import { disconnectSupport } from '../support/supportApi';
 
-const AUTH_URL = 'http://localhost:4001/api';
+const AUTH_URL = (import.meta.env.VITE_AUTH_URL || 'http://localhost:4001') + '/api';
 const SESSION_KEY = 'jm_session';
 const EVENT = 'jm-auth-change';
 
