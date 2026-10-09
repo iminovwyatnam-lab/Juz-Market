@@ -1,21 +1,41 @@
 // src/admin/pages/OrdersPage.jsx
 import { useEffect, useState } from 'react';
-import { loadOrders, saveOrders, orderTotal, ORDER_STATUS_LABELS } from '../adminStorage';
+import { loadOrders, saveOrders, deleteCancelledOrder, orderTotal, ORDER_STATUS_LABELS } from '../adminStorage';
 import OrderModal from '../components/OrderModal';
 
 export default function OrdersPage(){
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(loadOrders);
   const [filter, setFilter] = useState('all');
   const [activeOrderId, setActiveOrderId] = useState(null);
 
-  useEffect(() => { setOrders(loadOrders()); }, []);
+  useEffect(() => {
+    const refresh = () => setOrders(loadOrders());
+    window.addEventListener('storage', refresh);
+    window.addEventListener('focus', refresh);
+    window.addEventListener('jm-orders-change', refresh);
+    return () => {
+      window.removeEventListener('storage', refresh);
+      window.removeEventListener('focus', refresh);
+      window.removeEventListener('jm-orders-change', refresh);
+    };
+  }, []);
 
   const activeOrder = orders.find(o => o.id === activeOrderId) || null;
 
   function handleStatusChange(id, status){
-    const updated = orders.map(o => o.id === id ? { ...o, status } : o);
-    setOrders(updated);
-    saveOrders(updated);
+    const updated = loadOrders().map(o => o.id === id ? { ...o, status } : o);
+    try { saveOrders(updated); setOrders(updated); }
+    catch { alert('Не удалось сохранить статус заказа.'); }
+  }
+
+  function handleDelete(id){
+    const order = loadOrders().find(item => item.id === id);
+    if(!order || order.status !== 'cancelled') return;
+    if(!confirm(`Удалить отменённый заказ ${id} навсегда? Он также исчезнет из истории покупателя.`)) return;
+    try {
+      setOrders(deleteCancelledOrder(id));
+      if(activeOrderId === id) setActiveOrderId(null);
+    } catch(error) { alert(error.message); }
   }
 
   const filtered = [...orders]
@@ -66,7 +86,10 @@ export default function OrdersPage(){
                     )}
                   </td>
                   <td><span className={`adm-pill adm-pill-${o.status}`}>{ORDER_STATUS_LABELS[o.status]}</span></td>
-                  <td><button className="adm-row-btn" onClick={() => setActiveOrderId(o.id)}>Открыть</button></td>
+                  <td>
+                    <button className="adm-row-btn" onClick={() => setActiveOrderId(o.id)}>Открыть</button>
+                    {o.status === 'cancelled' && <button className="adm-row-btn adm-row-btn-danger" onClick={() => handleDelete(o.id)}>Удалить</button>}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -74,7 +97,7 @@ export default function OrdersPage(){
         </div>
       </div>
 
-      <OrderModal order={activeOrder} onClose={() => setActiveOrderId(null)} onStatusChange={handleStatusChange} />
+      <OrderModal order={activeOrder} onClose={() => setActiveOrderId(null)} onStatusChange={handleStatusChange} onDelete={handleDelete} />
     </section>
   );
 }

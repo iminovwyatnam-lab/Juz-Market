@@ -8,7 +8,10 @@ const PAGE_TITLES = {
   '/admin': 'Обзор',
   '/admin/orders': 'Заказы',
   '/admin/products': 'Товары',
-  '/admin/users': 'Пользователи'
+  '/admin/users': 'Пользователи',
+  '/admin/applications': 'Заявки',
+  '/admin/support': 'Поддержка',
+  '/admin/banners': 'Баннеры'
 };
 
 export default function AdminLayout(){
@@ -29,7 +32,7 @@ export default function AdminLayout(){
   }, []);
 
   const linkClass = ({ isActive }) => `adm-link${isActive ? ' is-active' : ''}`;
-  const title = PAGE_TITLES[location.pathname] || 'Панель управления';
+  const title = PAGE_TITLES[location.pathname] || (location.pathname.startsWith('/admin/sellers/') ? 'Кабинет продавца' : 'Панель управления');
 
   return (
     <div className="adm-shell">
@@ -51,6 +54,13 @@ export default function AdminLayout(){
           </NavLink>
           <NavLink to="/admin/users" className={linkClass}>
             <span className="adm-link-ico"></span> Пользователи
+          </NavLink>
+          <NavLink to="/admin/applications" className={linkClass}>
+            <span className="adm-link-ico"></span> Заявки
+          </NavLink>
+          <NavLink to="/admin/banners" className={linkClass}><span className="adm-link-ico"></span> Баннеры</NavLink>
+          <NavLink to="/admin/support" className={linkClass}>
+            <span className="adm-link-ico"></span> Поддержка
           </NavLink>
         </nav>
       </aside>

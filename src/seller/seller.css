@@ -1,0 +1,111 @@
+.seller-page { min-height:100vh; background:#f8f8fc; color:#252237; font-family:Arial, sans-serif; padding:0 24px 60px; }
+.seller-page *, .seller-dialog * { box-sizing:border-box; margin:0; }
+.seller-container { max-width:1120px; margin:0 auto; }
+.seller-top { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:28px 0 44px; }
+.seller-brand { font-size:26px; font-weight:800; color:#5e4bd6; text-decoration:none; letter-spacing:-1px; }
+.seller-brand span { color:#252237; }
+.seller-back { color:#635e77; text-decoration:none; font-size:14px; }
+.seller-welcome { display:grid; grid-template-columns:1.05fr 1fr; gap:72px; align-items:start; padding-top:20px; }
+.seller-intro { padding-top:40px; }
+.seller-eyebrow { display:block; color:#7768ca; font-size:11px; font-weight:700; letter-spacing:1.5px; margin-bottom:16px; }
+.seller-intro h1 { font-size:48px; line-height:1.1; letter-spacing:-1.5px; margin-bottom:24px; }
+.seller-intro > p { font-size:17px; line-height:1.65; color:#726d83; max-width:380px; }
+.seller-steps { display:grid; gap:28px; list-style:none; margin-top:44px; padding:0; }
+.seller-steps li { display:flex; align-items:flex-start; gap:16px; font-size:14px; color:#7b758a; line-height:1.6; }
+.seller-steps li b { padding:7px 10px; background:#ece8fc; border-radius:10px; color:#6d57d8; }
+.seller-steps strong { display:block; color:#302a43; font-size:16px; margin-bottom:3px; }
+.seller-panel { background:#fff; border:1px solid #e9e5f1; border-radius:18px; padding:30px; }
+.seller-page h2, .seller-dialog h2 { font-size:22px; line-height:1.3; }
+.seller-muted { color:#817b8f; font-size:13px; line-height:1.6; }
+.seller-auth > p { margin:10px 0 22px; }
+.seller-tabs { display:flex; gap:4px; padding:4px; background:#f4f2f8; border-radius:10px; margin-bottom:28px; }
+.seller-tabs button { flex:1; border:0; background:transparent; padding:12px 8px; border-radius:7px; font:inherit; color:#787185; cursor:pointer; }
+.seller-tabs button[aria-pressed=true] { background:white; color:#6250c7; box-shadow:0 1px 6px #33245d12; }
+.seller-page fieldset, .seller-dialog fieldset { border:0; padding:0; min-width:0; }
+.seller-page label, .seller-dialog label { display:flex; flex-direction:column; gap:8px; margin-bottom:17px; font-size:13px; font-weight:600; }
+.seller-page input, .seller-page select, .seller-page textarea, .seller-dialog input, .seller-dialog select, .seller-dialog textarea { width:100%; min-width:0; padding:12px 13px; border:1px solid #ded9e9; border-radius:9px; background:#fff; font:inherit; font-weight:400; color:#302a43; }
+.seller-dialog textarea { resize:vertical; }
+.seller-page input:focus, .seller-dialog input:focus, .seller-dialog select:focus, .seller-dialog textarea:focus { outline:2px solid #cec4ff; border-color:#806bea; }
+.seller-page button, .seller-dialog button { cursor:pointer; font:inherit; transition:background .15s; }
+.seller-page button:disabled, .seller-dialog button:disabled { cursor:wait; opacity:.6; }
+.seller-primary { padding:12px 20px; border-radius:9px; border:1px solid #7c6bf5; background:#7c6bf5; color:#fff; font-weight:600 !important; }
+.seller-primary:hover { background:#6c59e0; }
+.seller-auth .seller-primary { width:100%; }
+.seller-secondary { padding:11px 16px; border-radius:9px; border:1px solid #ddd7eb; background:#fff; color:#5d5278; }
+.seller-secondary:hover { background:#f6f3fc; }
+.seller-hint { font-size:11px; font-weight:400; color:#888194; line-height:1.6; }
+.seller-auth .seller-hint { margin-top:14px; }
+.seller-error, .seller-success { margin:16px 0; padding:12px 14px; border-radius:9px; font-size:13px; line-height:1.5; }
+.seller-error { color:#a9253f; background:#fff0f2; }
+.seller-success { color:#187847; background:#edfaf2; }
+.seller-text-button { background:none; border:0; color:inherit; text-decoration:underline; }
+.seller-heading { display:flex; justify-content:space-between; align-items:center; gap:20px; margin:12px 0 28px; }
+.seller-heading h1 { font-size:30px; overflow-wrap:anywhere; margin-bottom:8px; }
+.seller-heading .seller-eyebrow { margin-bottom:10px; }
+.seller-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:26px; }
+.seller-stats > div { padding:22px 24px; border:1px solid #e9e5f1; border-radius:14px; background:#fff; display:flex; flex-direction:column; gap:14px; }
+.seller-stats span { font-size:13px; color:#817b8f; }
+.seller-stats strong { font-size:30px; font-weight:600; }
+.seller-section-top { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:24px; }
+.seller-section-top p { margin-top:7px; }
+.seller-empty { text-align:center; padding:45px 16px; color:#817b8f; line-height:1.7; }
+.seller-empty h3 { color:#393047; font-size:18px; margin-bottom:8px; }
+.seller-empty button { margin-top:16px; }
+.seller-product { display:flex; align-items:center; gap:18px; padding:18px 0; border-top:1px solid #eeeaf4; }
+.seller-product > img { width:68px; height:76px; object-fit:contain; border:1px solid #eeeaf4; border-radius:10px; background:white; }
+.seller-product-info { flex:1; min-width:0; display:grid; gap:6px; }
+.seller-product-info a { font-size:15px; font-weight:600; color:#383044; text-decoration:none; overflow-wrap:anywhere; }
+.seller-stock { color:#198657; font-size:12px; }
+.seller-price { white-space:nowrap; font-size:14px; }
+.seller-product-actions { display:flex; align-items:center; gap:10px; }
+.seller-delete { color:#b5415c; background:none; border:0; padding:10px; font-size:13px !important; }
+.seller-dialog { margin:auto; position:fixed; inset:0; width:calc(100% - 32px); max-width:550px; max-height:90dvh; padding:28px; border:1px solid #e9e5f1; border-radius:18px; color:#252237; font-family:Arial,sans-serif; overflow:auto; }
+.seller-dialog::backdrop { background:rgba(26,20,47,.45); }
+.seller-editor-top { display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:24px; }
+.seller-close { border:0; background:none; color:#817b8f; font-size:26px !important; padding:0 6px; }
+.seller-preview { width:100%; height:130px; object-fit:contain; border-radius:10px; background:#f8f7fb; }
+.seller-form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.seller-actions { display:flex; justify-content:flex-end; gap:12px; }
+@media(max-width:760px) {
+  .seller-page { padding:0 18px 36px; }
+  .seller-top { padding:22px 0 26px; }
+  .seller-welcome { grid-template-columns:1fr; gap:32px; padding-top:0; }
+  .seller-intro { padding-top:0; }
+  .seller-intro h1 { font-size:36px; }
+  .seller-steps { gap:18px; margin-top:24px; }
+  .seller-panel { padding:22px; }
+  .seller-heading { flex-wrap:wrap; }
+  .seller-heading h1 { font-size:25px; }
+  .seller-stats { gap:9px; }
+  .seller-stats > div { padding:16px 12px; }
+  .seller-stats span { font-size:11px; }
+  .seller-section-top { flex-wrap:wrap; }
+  .seller-product { display:grid; grid-template-columns:64px 1fr; gap:12px; }
+  .seller-product > img { width:60px; height:70px; }
+  .seller-price, .seller-product-actions { grid-column:2; }
+  .seller-dialog { padding:22px; }
+  .seller-actions { flex-wrap:wrap; }
+}
+
+/* Характеристики товара в форме */
+.seller-specs { margin-bottom:17px; padding:16px; border:1px solid #ece8f4; border-radius:12px; background:#fbfaff; }
+.seller-specs-head { display:flex; flex-direction:column; gap:3px; margin-bottom:12px; font-size:13px; font-weight:600; }
+.seller-spec-row { display:grid; grid-template-columns:1fr 1.3fr 34px; gap:8px; margin-bottom:8px; }
+.seller-spec-remove { border:0; background:none; color:#a79fb8; font-size:22px !important; padding:0; }
+.seller-spec-remove:hover:not(:disabled) { color:#b5415c; }
+.seller-spec-add { margin-top:4px; padding:9px 14px; font-size:13px !important; }
+.seller-dialog { max-width:640px; }
+.seller-auth input[name=passport] { letter-spacing:1px; }
+@media(max-width:760px) { .seller-spec-row { grid-template-columns:1fr 34px; } .seller-spec-row input:nth-child(2) { grid-column:1; } .seller-spec-remove { grid-row:1 / span 2; grid-column:2; } }
+
+/* Заявка продавца: ФИО, фото паспорта, экран «заявка отправлена» */
+.seller-name-row { margin-bottom:0; }
+.seller-passport-photos { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:17px; }
+.seller-passport-photos .seller-passport-photo { margin-bottom:0; }
+.seller-passport-drop { display:flex; align-items:center; justify-content:center; height:110px; border:1px dashed #cfc8e4; border-radius:10px; background:#faf9ff; color:#8a83a0; font-weight:400; font-size:12px; overflow:hidden; cursor:pointer; }
+.seller-passport-drop img { width:100%; height:100%; object-fit:cover; }
+.seller-passport-photo input[type=file] { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+.seller-passport-photo { position:relative; }
+.seller-sent { text-align:center; padding:26px 6px 6px; }
+.seller-sent h3 { font-size:20px; margin-bottom:10px; color:#187847; }
+.seller-sent p { color:#726d83; font-size:14px; line-height:1.65; margin-bottom:20px; }

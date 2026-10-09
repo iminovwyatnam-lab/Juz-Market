@@ -1,0 +1,37 @@
+.jm-profile-support, .jm-support-inbox { margin: 20px 0; border: 1px solid #e3e6ea; border-radius: 14px; background: white; overflow: hidden; color: #16181d; }
+.jm-profile-support *, .jm-support-inbox * { box-sizing: border-box; margin: 0; }
+.jm-profile-support button, .jm-support-inbox button, .jm-chat button { font: inherit; cursor: pointer; }
+.jm-support-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; border: 0; padding: 20px; background: white; text-align: left; color: inherit; }
+.jm-support-toggle b { font-size: 16px; }
+.jm-support-toggle small { display: block; margin-top: 6px; color: #6b7280; }
+.jm-support-badge { display: inline-block; background: #7c6bf5; color: white; border-radius: 20px; font-size: 12px; min-width: 22px; padding: 3px 7px; text-align: center; }
+.jm-chat { width: 100%; }
+.jm-chat-messages { height: 340px; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 12px; padding: 18px; background: #f8f9fb; border-top: 1px solid #e3e6ea; }
+.jm-chat-empty { padding: 24px; text-align: center; color: #6b7280; line-height: 1.6; }
+.jm-chat-message { flex: 0 0 auto; align-self: flex-start; max-width: 85%; padding: 12px 14px; border: 1px solid #e3e6ea; border-radius: 12px 12px 12px 2px; background: white; overflow-wrap: anywhere; }
+.jm-chat-message.jm-chat-own { align-self: flex-end; border-color: #ded9ff; background: #f0edff; border-radius: 12px 12px 2px 12px; }
+.jm-chat-message b { font-size: 12px; color: #5f5c76; }
+.jm-chat-message p { margin: 6px 0; white-space: pre-wrap; line-height: 1.5; }
+.jm-chat-message time { font-size: 11px; color: #6b7280; }
+.jm-chat-compose, .jm-support-connect { padding: 18px; display: grid; gap: 10px; }
+.jm-chat-compose textarea, .jm-support-connect input { width: 100%; min-width: 0; padding: 10px 12px; font: inherit; color: inherit; border: 1px solid #d9dce4; border-radius: 8px; background: white; }
+.jm-chat-compose textarea { resize: vertical; min-height: 76px; max-height: 220px; }
+.jm-chat-compose > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.jm-chat-compose small { color: #6b7280; }
+.jm-chat-compose button, .jm-support-connect button { background: #7c6bf5; color: white; border: 0; border-radius: 8px; padding: 11px 18px; }
+.jm-support-connect p { line-height: 1.6; }
+.jm-chat button:disabled, .jm-support-connect button:disabled { opacity: .6; cursor: wait; }
+.jm-chat-error { margin: 10px 18px; color: #b91c1c; line-height: 1.5; }
+.jm-profile-support :focus-visible, .jm-support-inbox :focus-visible { outline: 2px solid #7c6bf5; outline-offset: 2px; }
+.jm-support-inbox { display: grid; grid-template-columns: minmax(180px, 280px) minmax(0, 1fr); }
+.jm-support-threads { border-right: 1px solid #e3e6ea; max-height: 660px; overflow-y: auto; }
+.adm-shell .jm-support-thread { display: block; width: 100%; padding: 16px; border-bottom: 1px solid #e3e6ea; text-align: left; }
+.jm-support-thread > span { display: flex; justify-content: space-between; gap: 8px; }
+.jm-support-thread small { display: block; margin: 6px 0; overflow-wrap: anywhere; color: #6b7280; }
+.jm-support-thread p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.adm-shell .jm-support-thread.is-active { background: #e4f8f1; }
+.jm-support-person { padding: 16px 18px; overflow-wrap: anywhere; }
+.jm-support-person span { display: block; margin-top: 6px; color: #6b7280; }
+.adm-shell .jm-chat-compose button { background: #10b981; color: white; }
+.jm-support-conversation { min-width: 0; }
+@media (max-width: 700px) { .jm-support-inbox { grid-template-columns: 1fr; } .jm-support-threads { max-height: 220px; border-right: 0; border-bottom: 1px solid #e3e6ea; } .jm-chat-message { max-width: 94%; } }

@@ -64,6 +64,14 @@ body {
     font-size: 15px;
     margin-top: 50px;
 }
+.footer-text1{
+    color: rgba(131, 125, 125, 1);
+    font-size: 15px;
+    margin-top: 50px;
+}
+.footer-text1 p{
+    margin-bottom: 10px;
+}
 .footer-text p{
     margin-bottom: 10px;
 }
@@ -84,4 +92,86 @@ body {
 }
 .sot-logo{
     width: 30px;
+}
+.mobile-button{
+    display: none;
+}
+.brr{
+    display: none;
+}
+@media (min-width: 0px) and (max-width: 480px){
+    .juz{
+        width: 180px;
+        position: relative;
+        bottom: 70px;
+    }
+    .j-logo{
+        width: 120px;
+        margin-left: 10px;
+        margin-top: -100px;
+    }
+    .footer-text{
+        text-align: center;
+        margin-top: -50px;
+        padding-top: 50px;
+        position: absolute;
+        left: 145px;
+    }
+    .footer-text1{
+        text-align: center;
+        margin-top: 230px;
+        padding-bottom: 50px;
+        position: absolute;
+        left: 140px;
+    }
+    .bottom-footer{
+        margin-top: 100px;
+    }
+    .logo-flex{
+        position: relative;
+        top: 160px;
+        right: 240px;
+    }
+    .j-logo1{
+        width: 120px;
+        margin-top: -20px;
+        margin-left: 120px;
+    }
+    .hr1{
+        width: 300px;
+    }
+    .bottom-text{
+        font-size: 10px;
+    }
+    .mobile-button{
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.25);
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        position: fixed;
+        z-index: 3;
+        bottom: 0px;
+    }
+    .mobile-button button{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: white;
+    }
+    .mobile-button button img{
+        width: 25px;
+    }
+    .ser{
+        width: 30px;
+    }
+    .brr{
+        display: block;
+    }
 }

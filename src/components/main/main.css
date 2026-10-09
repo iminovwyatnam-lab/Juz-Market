@@ -44,9 +44,19 @@ body {
 
 .banner {
     display: block;
-    width: 1280px;
-    margin-top: 35px;
-    object-fit: cover;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+}
+
+.mySwiper .jm-ad-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .banner1 {
@@ -65,26 +75,25 @@ body {
 
 .mySwiper {
     position: relative;
-}
-
-.mySwiper .swiper-button-next,
-.mySwiper .swiper-button-prev {
-    margin-top: -35px;
+    top: -50px;
 }
 
 .mySwiper .swiper-button-next {
     right: 20px;
+    display: block;
 }
 
 .mySwiper .swiper-button-prev {
     left: 20px;
+    display: block;
 }
 
 .mySwiper .swiper-button-next::after,
 .mySwiper .swiper-button-prev::after {
     font-size: 18px;
 }
-.tovar{
+
+.tovar {
     width: 100%;
     height: 400px;
     border-radius: 20px;
@@ -95,7 +104,52 @@ body {
     justify-content: center;
     margin-top: 50px;
 }
-.hh2{
+
+.hh2 {
     font-size: 25px;
     font-family: var(--Rubik);
+}
+
+.swiper-pagination {
+    display: block;
+}
+
+.hh1{
+    margin-top: -40px;
+}
+@media (min-width: 0px) and (max-width: 480px) {
+    .banner {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .mySwiper .swiper-button-next {
+        display: none;
+        right: 20px;
+    }
+
+    .mySwiper .swiper-button-prev {
+        left: 20px;
+        display: none;
+    }
+
+    .mySwiper {
+        margin-top: -50px;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+    .hh1{
+        margin-top: -8px;
+        padding-left: 10px;
+        margin-bottom: -15px;
+        font-size: 25px;
+    }
+    .swiper{
+        height: 140px;
+        margin-top: 100px;
+    }
 }

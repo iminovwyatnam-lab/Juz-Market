@@ -1,0 +1,240 @@
+/* src/pages/profile/profile.css */
+.pf-page {
+    max-width: 800px;
+    margin: 40px auto 60px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.pf-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.pf-avatar {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #7C6BF5;
+    color: #fff;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pf-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.pf-info h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+}
+
+.pf-info p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #555;
+    overflow-wrap: anywhere;
+}
+
+.pf-logout {
+    padding: 9px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.pf-title {
+    margin: 32px 0 14px;
+    font-size: 20px;
+}
+
+.pf-empty {
+    padding: 32px 16px;
+    border: 1px dashed #ccc;
+    border-radius: 14px;
+    text-align: center;
+    color: #666;
+}
+
+.pf-empty a {
+    color: #7C6BF5;
+}
+
+.pf-order {
+    margin-bottom: 14px;
+    padding: 16px 18px;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.pf-order-head {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.pf-order-head > div {
+    margin: 0;
+}
+
+.pf-order-id {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pf-order-date {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: #888;
+}
+
+.pf-status {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    background: #eee;
+    color: #444;
+}
+
+.pf-status-new { background: #e3f0ff; color: #1a5fb4; }
+.pf-status-processing { background: #fff1d6; color: #9a6200; }
+.pf-status-delivering { background: #efe9ff; color: #5a49d6; }
+.pf-status-done { background: #dff5e1; color: #2e7d32; }
+.pf-status-cancelled { background: #fde3e1; color: #c62828; }
+
+.pf-items {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.pf-items li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 5px 0;
+}
+
+.pf-order-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+.pf-address {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #555;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.pf-address a {
+    color: #7C6BF5;
+    font-size: 13px;
+}
+
+@media (max-width: 480px) {
+    .pf-card {
+        flex-wrap: wrap;
+    }
+}
+
+/* Ссылка на кабинет продавца */
+.pf-seller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 14px 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s, background .15s;
+}
+
+.pf-seller:hover {
+    border-color: #7C6BF5;
+    background: #faf9ff;
+}
+
+.pf-seller-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.pf-seller-text b {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-left: -150px;
+}
+
+.pf-seller-text small {
+    font-size: 13px;
+    color: #777;
+    margin-left: -150px;
+}
+
+.pf-seller-arrow {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f1eefe;
+    color: #7C6BF5;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, color .15s;
+    margin-right: 20px;
+}
+
+.pf-seller:hover .pf-seller-arrow {
+    background: #7C6BF5;
+    color: #fff;
+}
+
+.pf-back {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.pf-back:hover {
+  opacity: 1;
+}

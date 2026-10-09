@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
+    /* flex-wrap: wrap; */
 }
 
 body {
@@ -56,8 +57,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     overflow: hidden;
     transition: width 0.5s;
+    display: block;
 }
 
 .obshiy {
@@ -66,6 +69,8 @@ header {
 
 .fa-solid {
     margin-left: 10px;
+    position: relative;
+    top: 8px;
 }
 
 .inp {
@@ -98,6 +103,7 @@ header {
     position: relative;
     width: 120px;
     padding: 10px;
+    display: block;
     display: flex;
     align-items: center;
     justify-content: baseline;
@@ -121,6 +127,7 @@ header {
     position: relative;
     width: 120px;
     padding: 10px;
+    display: block;
     display: flex;
     align-items: center;
     justify-content: baseline;
@@ -157,3 +164,75 @@ header {
     justify-content: center;
     padding: 0 4px;
 }
+
+.sign-up {
+    display: block;
+}
+
+.fa-solid1 {
+    display: none;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    header {
+        position: fixed;
+        z-index: 1000;
+        top: 20px;
+    }
+
+    .juz-market {
+        width: 170px;
+    }
+
+    .butt {
+        display: none;
+    }
+
+    .butt1 {
+        display: none;
+    }
+
+    .sign-up {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .inp {
+        display: none;
+    }
+
+    .fa-solid1 {
+        display: block;
+        position: relative;
+        right: 60px;
+        cursor: pointer;
+    }
+}
+/* Кнопки существующего поиска. */
+.header-search-trigger, .header-search-mobile { border: 0; padding: 0; background: transparent; cursor: pointer; }
+.header-search-trigger .fa-solid { margin-right: 4px; }
+.header-search-trigger:focus-visible, .header-search-mobile:focus-visible { outline: 2px solid #7c6bf5; outline-offset: 3px; }
+/* Основной поиск работает в шапке на компьютере и телефоне. */
+.jm-site-header { gap: 24px; }
+.jm-site-header .header-flex { min-width: 0; gap: 10px; }
+.jm-site-header .search { display: flex; flex-shrink: 0; align-items: center; width: 40px; margin: 0; }
+.jm-site-header .search.is-open, .jm-site-header .search:hover, .jm-site-header .search:focus-within { width: min(280px, 27vw); }
+.jm-site-header .header-search-trigger { flex-shrink: 0; width: 36px; height: 36px; margin: 0; }
+.jm-site-header .header-search-trigger img { width: 20px; display: block; }
+.jm-site-header .inp { display: block; min-width: 0; margin: 0; box-shadow: none !important; padding: 0; }
+.jm-site-header .search.is-open .inp, .jm-site-header .search:hover .inp, .jm-site-header .search:focus-within .inp { width: 100%; padding: 8px; opacity: 1; }
+@media(max-width: 1000px) and (min-width: 481px) {
+ .jm-site-header { gap: 12px; flex-wrap: wrap; }
+ .jm-site-header .header-flex { margin-right: 16px; flex-wrap: wrap; }
+}
+@media(max-width: 480px) {
+ .jm-site-header { width: 100%; gap: 8px; left: 0; top: 0; margin: 0; padding: 6px 10px; background: var(--jm-surface, #fff); }
+ .jm-site-header > a { margin: 0; }
+ .jm-site-header .juz-market { width: 130px; margin: 0; }
+ .jm-site-header .header-flex { flex: 1; margin: 0; justify-content: flex-end; }
+ .jm-site-header .search.is-open, .jm-site-header .search:hover, .jm-site-header .search:focus-within { width: min(210px, calc(100vw - 160px)); }
+}
+.jm-site-header .butt, .jm-site-header .butt1 { width: auto; min-width: 110px; white-space: nowrap; }

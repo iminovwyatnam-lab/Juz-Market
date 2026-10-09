@@ -1,10 +1,11 @@
 // src/admin/pages/ProductsPage.jsx
 import { useEffect, useState } from 'react';
 import {
-  getProducts, createProduct, updateProduct, deleteProduct,
+  updateProduct, deleteProduct,
   getCategories, createCategory, deleteCategory
 } from '../adminApi';
 import ProductModal from '../components/ProductModal';
+import { getCatalogProducts, productImageUrl } from '../../products/catalogApi';
 import CategoryModal from '../components/CategoryModal';
 
 export default function ProductsPage(){
@@ -18,7 +19,7 @@ export default function ProductsPage(){
 
   async function refresh(){
     try{
-      const [p, c] = await Promise.all([getProducts(), getCategories()]);
+      const [p, c] = await Promise.all([getCatalogProducts(), getCategories().catch(() => [])]);
       setProducts(p);
       setCategories(c);
       setError(null);
@@ -29,13 +30,12 @@ export default function ProductsPage(){
 
   useEffect(() => { refresh(); }, []);
 
-  function openNewProduct(){ setEditingProduct(null); setShowProductModal(true); }
   function openEditProduct(p){ setEditingProduct(p); setShowProductModal(true); }
 
   async function handleSaveProduct(formData){
+    if(!editingProduct || editingProduct.sellerId) return;
     try{
-      if(editingProduct) await updateProduct(editingProduct.id, formData);
-      else await createProduct(formData);
+      await updateProduct(editingProduct.id, formData);
       setShowProductModal(false);
       await refresh();
     } catch(e){
@@ -66,7 +66,6 @@ export default function ProductsPage(){
         <p className="adm-view-sub">Каталог магазина</p>
         <div className="adm-head-actions">
           <button className="adm-btn-secondary" onClick={() => setShowCategoryModal(true)}>+ Категория</button>
-          <button className="adm-btn-primary" onClick={openNewProduct}>+ Добавить товар</button>
         </div>
       </header>
 
@@ -80,12 +79,12 @@ export default function ProductsPage(){
             </thead>
             <tbody>
               {products.length === 0 ? (
-                <tr><td colSpan="6" className="adm-empty-row">Товаров пока нет — нажми "+ Добавить товар"</td></tr>
+                <tr><td colSpan="6" className="adm-empty-row">Товаров пока нет — продавцы добавляют их в своём кабинете</td></tr>
               ) : products.map(p => (
                 <tr key={p.id}>
                   <td>
                     {p.image ? (
-                      <img src={`http://localhost:4000${p.image}`} alt={p.name} style={{ width: 42, height: 42, objectFit: 'cover', borderRadius: 8 }} />
+                      <img src={productImageUrl(p.image)} alt={p.name} style={{ width: 42, height: 42, objectFit: 'cover', borderRadius: 8 }} />
                     ) : (
                       <div style={{ width: 42, height: 42, borderRadius: 8, background: 'var(--adm-bg)' }} />
                     )}
@@ -95,8 +94,10 @@ export default function ProductsPage(){
                   <td className="adm-mono">{p.price.toLocaleString('ru-RU')} сум</td>
                   <td className="adm-mono">{p.stock}</td>
                   <td>
-                    <button className="adm-row-btn" onClick={() => openEditProduct(p)}>Изменить</button>
-                    <button className="adm-row-btn adm-row-btn-danger" onClick={() => handleDeleteProduct(p.id)}>Удалить</button>
+                    {p.sellerId ? <span className="adm-muted">Магазин: {p.sellerName}<br />Управляет продавец</span> : <>
+                      <button className="adm-row-btn" onClick={() => openEditProduct(p)}>Изменить</button>
+                      <button className="adm-row-btn adm-row-btn-danger" onClick={() => handleDeleteProduct(p.id)}>Удалить</button>
+                    </>}
                   </td>
                 </tr>
               ))}

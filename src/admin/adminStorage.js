@@ -28,7 +28,20 @@ function write(key, data){
 }
 
 export function loadOrders(){ return read(KEYS.orders); }
-export function saveOrders(orders){ write(KEYS.orders, orders); }
+export function saveOrders(orders){
+  write(KEYS.orders, orders);
+  window.dispatchEvent(new Event('jm-orders-change'));
+}
+
+export function deleteCancelledOrder(id){
+  const orders = loadOrders();
+  const order = orders.find(item => item.id === id);
+  if(!order) return orders;
+  if(order.status !== 'cancelled') throw new Error('Удалить можно только отменённый заказ.');
+  const updated = orders.filter(item => item.id !== id);
+  saveOrders(updated);
+  return updated;
+}
 
 export function loadUsers(){ return read(KEYS.users); }
 export function saveUsers(users){ write(KEYS.users, users); }

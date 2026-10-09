@@ -1,0 +1,176 @@
+/* src/components/checkout/checkout.css */
+.co-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.co-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    box-sizing: border-box;
+    color: #111;
+}
+
+.co-card h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+}
+
+.co-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+}
+
+.co-text {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.co-items {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+    font-size: 13px;
+}
+
+.co-items li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.co-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 16px;
+    font-size: 15px;
+}
+
+.co-label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 13px;
+    color: #444;
+}
+
+.co-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.co-input:focus {
+    border-color: #7C6BF5;
+}
+
+.co-detect {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px dashed #7C6BF5;
+    border-radius: 8px;
+    background: #f6f5ff;
+    color: #5a49d6;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.co-detect:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.co-ok {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #2e7d32;
+}
+
+.co-error {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #d93025;
+}
+
+.co-link {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #7C6BF5;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.co-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #7C6BF5;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.co-btn-light {
+    background: #f1efff;
+    color: #5a49d6;
+}
+
+/* Кнопка "Оформить" в корзине (в karzina.css она всегда выглядит неактивной) */
+.karzina-checkout.is-ready {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Определение локации в окне адреса на странице товара */
+.pd-detect {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px dashed #7C6BF5;
+    border-radius: 6px;
+    background: #f6f5ff;
+    color: #5a49d6;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pd-loc-note {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: #555;
+}

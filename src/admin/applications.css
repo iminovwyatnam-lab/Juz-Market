@@ -1,0 +1,22 @@
+/* Страница «Заявки» в админке (используются общие классы adm-*) */
+.adm-app-gate { max-width: 460px; padding: 26px 28px; }
+.adm-app-gate h2 { font-family: var(--adm-font-display); font-size: 17px; margin-bottom: 8px; }
+.adm-app-gate form { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.adm-app-input { padding: 10px 12px; border: 1px solid var(--adm-border); border-radius: 10px; font-size: 14px; }
+.adm-app-input:focus { outline: 2px solid var(--adm-accent-soft); border-color: var(--adm-accent); }
+.adm-app-error { color: var(--adm-st-cancel); font-size: 13px; }
+.adm-app-modal { max-width: 720px; }
+.adm-app-modal h2 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-right: 28px; }
+.adm-app-modal .adm-modal-grid { grid-template-columns: repeat(3, 1fr); }
+.adm-app-modal .adm-modal-grid p { overflow-wrap: anywhere; font-size: 14px; }
+.adm-app-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+.adm-app-photo { margin: 0; }
+.adm-app-photo img { width: 100%; max-height: 320px; object-fit: contain; border: 1px solid var(--adm-border); border-radius: 10px; background: var(--adm-bg); display: block; }
+.adm-app-photo-empty { height: 160px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--adm-border); border-radius: 10px; color: var(--adm-muted); font-size: 13px; }
+.adm-app-actions { display: flex; gap: 12px; margin-top: 22px; }
+.adm-app-actions button:disabled { opacity: .6; cursor: wait; }
+.adm-app-reject { margin-left: 0; padding: 10px 18px; font-size: 13.5px; font-weight: 600; border-radius: 10px; }
+@media (max-width: 640px) {
+  .adm-app-modal .adm-modal-grid { grid-template-columns: 1fr 1fr; }
+  .adm-app-photos { grid-template-columns: 1fr; }
+}

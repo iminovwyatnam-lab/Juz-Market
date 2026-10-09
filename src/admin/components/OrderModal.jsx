@@ -1,7 +1,7 @@
 // src/admin/components/OrderModal.jsx
 import { ORDER_STATUS_LABELS } from '../adminStorage';
 
-export default function OrderModal({ order, onClose, onStatusChange }){
+export default function OrderModal({ order, onClose, onStatusChange, onDelete }){
   if(!order) return null;
   const hasLoc = order.lat && order.lng;
 
@@ -22,7 +22,7 @@ export default function OrderModal({ order, onClose, onStatusChange }){
             <li><span className="adm-muted">Без позиций</span></li>
           ) : order.items.map((it, i) => (
             <li key={i}>
-              <span>{it.name} × {it.qty}</span>
+              <span>{it.name} × {it.qty}{it.sellerName && <small className="adm-muted" style={{ display: 'block' }}>Продавец: {it.sellerName}{it.sellerPhone ? ` · ${it.sellerPhone}` : ''}</small>}</span>
               <span className="adm-mono">{(it.price * it.qty).toLocaleString('ru-RU')} сум</span>
             </li>
           ))}
@@ -53,6 +53,9 @@ export default function OrderModal({ order, onClose, onStatusChange }){
             <option key={val} value={val}>{label}</option>
           ))}
         </select>
+        {order.status === 'cancelled' && onDelete && (
+          <button className="adm-row-btn adm-row-btn-danger" style={{ marginTop: 16, marginLeft: 0 }} onClick={() => onDelete(order.id)}>Удалить отменённый заказ</button>
+        )}
       </div>
     </div>
   );
