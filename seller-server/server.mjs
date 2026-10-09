@@ -9,7 +9,7 @@ import { createSupportHandler } from './support.mjs';
 import { createModerationHandler } from './moderation.mjs';
 
 const hashPassword = promisify(scrypt);
-const port = Number(process.env.SELLER_PORT || 4002);
+const port = Number(process.env.PORT || process.env.SELLER_PORT || 4002);
 const dataDir = process.env.SELLER_DATA_DIR || fileURLToPath(new URL('./data/', import.meta.url));
 const uploadsDir = path.join(dataDir, 'uploads');
 const passportsDir = path.join(dataDir, 'passports');
