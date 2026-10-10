@@ -9,7 +9,7 @@ import ProductReviews from '../../reviews/ProductReviews';
 import { marketRequest } from '../../market/marketApi';
 import { getCatalogProduct } from '../../products/catalogApi';
 
-const API_ORIGIN = 'http://localhost:4000';
+const API_ORIGIN = (import.meta.env.VITE_API_ORIGIN || 'http://localhost:4000').replace(/\/$/, '');
 const formatPrice = (value) => Number(value).toLocaleString('ru-RU');
 
 function imageUrl(image) {

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node scripts/run-with-sellers.mjs",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "node scripts/run-with-sellers.mjs preview",
     "sellers": "node seller-server/server.mjs"
   },
   "dependencies": {

@@ -1,11 +1,25 @@
 const SELLER_ORIGIN = (import.meta.env.VITE_SELLER_API_ORIGIN || 'http://localhost:4002').replace(/\/$/, '');
 const TOKEN_KEY = 'jm_seller_token';
-export function hasSellerSession() { return Boolean(sessionStorage.getItem(TOKEN_KEY)); }
-export function clearSellerSession() { sessionStorage.removeItem(TOKEN_KEY); }
+// Переносим уже открытый сеанс из старого хранилища без повторного входа.
+function getSellerToken() {
+  const saved = localStorage.getItem(TOKEN_KEY);
+  if (saved) return saved;
+  const previous = sessionStorage.getItem(TOKEN_KEY);
+  if (previous) {
+    localStorage.setItem(TOKEN_KEY, previous);
+    sessionStorage.removeItem(TOKEN_KEY);
+  }
+  return previous || '';
+}
+export function hasSellerSession() { return Boolean(getSellerToken()); }
+export function clearSellerSession() {
+  localStorage.removeItem(TOKEN_KEY);
+  sessionStorage.removeItem(TOKEN_KEY);
+}
 async function request(route, { method = 'GET', data, authorized = false, signal } = {}) {
   const headers = {};
   if (data) headers['Content-Type'] = 'application/json';
-  if (authorized) headers.Authorization = `Bearer ${sessionStorage.getItem(TOKEN_KEY) || ''}`;
+  if (authorized) headers.Authorization = `Bearer ${getSellerToken()}`;
   let response;
   try {
     response = await fetch(`${SELLER_ORIGIN}/api${route}`, { method, headers, body: data ? JSON.stringify(data) : undefined, signal });
@@ -23,7 +37,8 @@ function withImage(product) {
 export async function sellerSignIn(mode, fields) {
   const result = await request(`/seller/${mode}`, { method: 'POST', data: fields });
   if (!result.token) return null; // регистрация: заявка отправлена и ждёт решения администратора
-  sessionStorage.setItem(TOKEN_KEY, result.token);
+  localStorage.setItem(TOKEN_KEY, result.token);
+  sessionStorage.removeItem(TOKEN_KEY);
   return result.seller;
 }
 export const getSeller = () => request('/seller/me', { authorized: true });

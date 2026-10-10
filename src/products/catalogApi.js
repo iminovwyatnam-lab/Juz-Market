@@ -1,5 +1,5 @@
 import { getPublicSellerProducts, getPublicSellerProduct } from '../seller/sellerApi';
-const API_ORIGIN = 'http://localhost:4000';
+const API_ORIGIN = (import.meta.env.VITE_API_ORIGIN || 'http://localhost:4000').replace(/\/$/, '');
 export function productImageUrl(image) {
   if (!image) return '';
   return /^(https?:|data:|blob:)/i.test(image) ? image : `${API_ORIGIN}${image}`;
