@@ -1,0 +1,63 @@
+.atvet {
+    width: 100%;
+    padding: 10px;
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.lii {
+    margin-top: 15px;
+}
+
+.obaz {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.textary {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+}
+
+.vopros {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.atvet1 {
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.otpravit {
+    width: 200px;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow:
+        0 1px 10px rgba(0, 0, 0, 0.25),
+        inset 0 1px 10px rgba(0, 0, 0, 0);
+    transition: all 0.4s;
+}
+
+.otpravit:hover{
+    transform: scale(1.04);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.521);
+}
+.otpravit:active {
+    transform: scale(1.00);
+    box-shadow:
+        0 1px 10px rgba(0, 0, 0, 0),
+        inset 0 1px 10px rgba(0, 0, 0, 0.25);
+}

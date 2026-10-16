@@ -14,7 +14,7 @@ import search from "../../assets/Juz-Market-Photo/search.png"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
-    useLanguage();
+  useLanguage();
   return (
     <div>
       <div className="cointainer">
@@ -26,14 +26,28 @@ export default function Footer() {
               </div>
 
               <div className="footer-text">
-                <p>{t("о нас")}</p>
-                <p>{t("связь с нами")}</p>
-                <p>{t("задать вопрос")}</p>
+                <Link className='footer-bottom-text' to="/o-nas">
+                  <p>{t("о нас")}</p>
+                </Link>
+
+                <Link className='footer-bottom-text' to="/svaz-s-nami">
+                  <p>{t("связь с нами")}</p>
+                </Link>
+
+                <Link className='footer-bottom-text' to="/zadat-vopros">
+                  <p>{t("задать вопрос")}</p>
+                </Link>
               </div>
 
               <div className="footer-text1">
-                <p>{t("соц сети")}</p>
-                <p>{t("контакты")}</p>
+                <Link className='footer-bottom-text' to="/sot-seti">
+                  <p>{t("соц сети")}</p>
+                </Link>
+
+                <Link className='footer-bottom-text' to="/kontakt">
+                  <p>{t("контакты")}</p>
+                </Link>
+
                 <p><Link to="/seller" style={{ color: "inherit", textDecoration: "none" }}>{t("Продавать на Juz Market")}</Link></p>
               </div>
             </div>

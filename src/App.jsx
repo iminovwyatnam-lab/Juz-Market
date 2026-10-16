@@ -1,6 +1,6 @@
 import React from 'react'
 import BannersPage from './admin/pages/BannersPage'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import Main from './components/main/Main'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -22,6 +22,12 @@ import SellerPage from './seller/SellerPage'
 import SellerAccountPage from './admin/pages/SellerAccountPage'
 import SupportPage from './admin/pages/SupportPage'
 import Settings from './pages/settings/Settings'
+import ONas from './pages/footer-info/o-nas/Onas'
+import Svazsnami from './pages/footer-info/svaz-s-nami/Svaz-s-nami'
+import Zadat from './pages/footer-info/zadat-vopros/Zadat'
+import SotSet from './pages/footer-info/sot-set/SotSet'
+import Kontakt from './pages/footer-info/kontakt/Kontakt'
+import NotFound from './pages/notFound/NotFound'
 
 export default function App() {
   return (
@@ -82,6 +88,53 @@ export default function App() {
           <div>
             <Header />
             <Settings />
+            <Footer />
+          </div>
+        } />
+
+        <Route path="/o-nas" element={
+          <div>
+            <Header />
+            <ONas />
+            <Footer />
+          </div>
+        } />
+
+        <Route path="/svaz-s-nami" element={
+          <div>
+            <Header />
+            <Svazsnami />
+            <Footer />
+          </div>
+        } />
+
+        <Route path="/zadat-vopros" element={
+          <div>
+            <Header />
+            <Zadat />
+            <Footer />
+          </div>
+        } />
+
+        <Route path='/sot-seti' element={
+          <div>
+            <Header />
+            <SotSet />
+            <Footer />
+          </div>
+        } />
+
+        <Route path='*' element={
+          <div>
+            <Header />
+            <NotFound />
+          </div>
+        } />
+
+        <Route path='/kontakt' element={
+          <div>
+            <Header />
+            <Kontakt />
             <Footer />
           </div>
         } />

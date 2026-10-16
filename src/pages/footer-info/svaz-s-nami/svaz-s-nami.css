@@ -1,0 +1,45 @@
+.nashi {
+    margin-top: 30px;
+    margin-left: 13px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.info-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.info-button button {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow:
+        0 1px 10px rgba(0, 0, 0, 0.25),
+        inset 0 1px 10px rgba(0, 0, 0, 0);
+    border: none;
+    transition: all 0.4s;
+}
+
+.info-button button:active {
+    box-shadow:
+        0 1px 10px rgba(0, 0, 0, 0),
+        inset 0 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.forma {
+    width: 100%;
+    padding: 10px;
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.forma-text {
+    margin-top: 30px;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
